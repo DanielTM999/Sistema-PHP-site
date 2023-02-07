@@ -1,0 +1,17 @@
+{
+    "name": "daniel/lib",
+    "autoload": {
+        "psr-4": {
+            "Daniel\\Lib\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Daniel Teixeira Melo",
+            "email": "108521502+DanielTM999@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.5"
+    }
+}
