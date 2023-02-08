@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include './Actsql.php';
 
     $sql = new Actsql;
@@ -10,12 +11,15 @@
         $senha = password_hash($senha_inseg, PASSWORD_DEFAULT);
         $ress = $sql::incluir("usuarios", $nome, $senha, uniqid());
         if($ress == 0){
-            echo "erro";
+            $_SESSION['erro_cad'] = true;
+            header('location: ../pages/cadastro.php');
+            exit;
         }else{
-            echo 'secesso';
+            header('location: ../pages/login.php');
+            exit;
         }
     }else{
-        header('location: ../pages/cadastro.html');
+        header('location: ../pages/cadastro.php');
         exit;
     }
 ?>

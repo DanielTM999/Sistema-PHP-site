@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +12,15 @@
 </head>
 <body>
     <div class="err">
-       
+        <?php 
+            if(isset($_SESSION['erro_cad'])){
+                if($_SESSION['erro_cad']){
+                    echo "usuario ja cadastrado";
+                }
+            }
+
+            unset($_SESSION['erro_cad']);
+        ?> 
     </div>
     <div class="form-cadastro">
         <form action="../prod/add.php" method="post">
